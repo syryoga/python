@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fahrt xmlns="http://a.org/Fahrtenbuch.xsd">
+	<datum>anyType</datum>
+	<fahrer>anyType</fahrer>
+	<vorname>anyType</vorname>
+	<alter>anyType</alter>
+</fahrt>

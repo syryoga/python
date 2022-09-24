@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE kundenliste [
+  <!--
+    + => 1 bis n-mal
+    ? => 0 bis 1-mal
+    * => 0 bis n-mal
+  -->
+  <!ELEMENT kundenliste (kunde+)>
+  <!ELEMENT kunde (vorname, nachname, alter, (adresse|postfach)+)>
+
+  <!ELEMENT vorname (#PCDATA)>
+  <!ELEMENT nachname (#PCDATA)>
+  <!ELEMENT alter (#PCDATA)>
+
+  <!ELEMENT adresse (strasse, postleitzahl, ort)>
+  <!ELEMENT strasse (#PCDATA)>
+  <!ELEMENT postleitzahl (#PCDATA)>
+  <!ELEMENT ort (#PCDATA)>
+
+  <!ELEMENT postfach (postleitzahl,ort, postfachnummer)>
+  <!ELEMENT postfachnummer (#PCDATA)>
+
+  <!ATTLIST kunde 
+    geschlecht (Mann|Frau|Inter) #REQUIRED
+    kundenart (Stammkunde|Neukunde|Kunde) #REQUIRED> <!-- #IMPLIED, #FIXED-->
+
+  <!ATTLIST adresse adressart (Rechnungsadresse|Lieferadresse|Privatadresse|Geschäftsadresse) #IMPLIED>
+]>
+
+
+<kundenliste>
+	<kunde geschlecht="Mann" kundenart="Stammkunde">
+		<vorname>Andreas</vorname>
+		<nachname>Schinagl</nachname>
+		<alter>666</alter>
+		<adresse adressart="Rechnungsadresse">
+			<strasse>Schinagl-Allee 1</strasse>
+			<postleitzahl>1234</postleitzahl>
+			<ort>Schinagl-City</ort>
+		</adresse>
+	</kunde>
+
+	<kunde geschlecht="Frau" kundenart="Stammkunde">
+		<vorname>string</vorname>
+		<nachname>string</nachname>
+		<alter>string</alter>
+		<adresse>
+			<strasse>string</strasse>
+			<postleitzahl>string</postleitzahl>
+			<ort>string</ort>
+		</adresse>
+		<postfach>
+			<postleitzahl>string</postleitzahl>
+			<ort>string</ort>
+			<postfachnummer>string</postfachnummer>
+		</postfach>
+	</kunde>
+</kundenliste>
+
+
+
+
+
+<!--
+<kundenliste>
+  <kunde geschlecht="Mann" kundenart="Stammkunde">
+    <vorname>Andreas</vorname>
+    <nachname>Schinagl</nachname>
+    <alter>5555</alter>
+    <adresse>
+      <strasse>Schinagl-Allee 1</strasse>
+      <postleitzahl>1234</postleitzahl>
+      <ort>Schinagl-City</ort>
+    </adresse>
+  </kunde>  
+</kundenliste>
+-->

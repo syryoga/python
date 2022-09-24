@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://a.org/Fahrtenbuch.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://a.org/Fahrtenbuch.xsd"
+    xmlns:mstns="http://a.org/Fahrtenbuch.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+	<xs:element name="fahrtenbuch">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fahrt"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="fahrt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="datum"/>
+				<xs:element name="fahrer"/>
+				<xs:element name="von"/>
+				<xs:element name="nach"/>
+				<xs:element name="uhrzeit"/>
+				<xs:element name="kilometerstand"/>
+				<xs:element name="fahrzeug"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="datum">
+		<xs:restriction base="xs:date">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	
+	
+</xs:schema>
